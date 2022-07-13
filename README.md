@@ -7,9 +7,10 @@ Reto de mercado libre
 
 For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.1/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.1/maven-plugin/reference/html/#build-image)
+* [Programación dinámica](https://www.wextensible.com/temas/programacion-dinamica)
+* [EL problema de la mochila](https://www.wextensible.com/temas/programacion-dinamica/mochila.html)
+* [Optimización Combinatoria](https://es.wikipedia.org/wiki/Optimizaci%C3%B3n_combinatoria)
+* [Combinatorics3 Lib --Subset--](https://github.com/dpaukov/combinatoricslib3)
 * [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/2.7.1/reference/htmlsingle/#web.reactive)
 
 ### Guides
@@ -17,4 +18,16 @@ For further reference, please consider the following sections:
 The following guides illustrate how to use some features concretely:
 
 * [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
+
+## Guía para levantar el proyecto
+* Descargar o clonar el proyecto: https://github.com/JorgeRafaelL/reto-ml
+  - Clonar: ```git clone https://github.com/JorgeRafaelL/reto-ml.git```
+  - Abrir el proyecto en tu entorno de desarrollo favorito
+  - Levantar el proyecto Spring boot: ```mvn spring-boot:run```
+
+## Ejecutar peticiones en el API desplegada en AWS
+* POST → /coupon/
+  - ```curl -X POST -H "Content-Type: application/json" -d '{"item_ids": ["MLA1115590875"], "amount": 48000}' http://ec2-18-188-150-6.us-east-2.compute.amazonaws.com:10550/coupon```
+* GET → /coupon/stats
+  - ```curl -X GET http://ec2-18-188-150-6.us-east-2.compute.amazonaws.com:10550/coupon/stats```
 
