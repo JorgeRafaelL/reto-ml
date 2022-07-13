@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=retoml
+#      - MONGO_INITDB_ROOT_USERNAME=usrretoml
+#      - MONGO_INITDB_ROOT_PASSWORD=pwdretoml
+#      - MONGO_INITDB_URI=mongodb://usrretoml:pwdretoml@localhost:27017/retoml
+#    command: [--auth]
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'
+    restart: unless-stopped
